@@ -1,5 +1,5 @@
 FROM apache/airflow:2.2.3-python3.7
-
+ENV PYTHONPATH=/home/airflow/.local/lib/python3.7/site-packages
 USER root
 
 RUN apt-get update \
@@ -10,7 +10,9 @@ RUN ["chmod", "+x", "entrypoint.sh"]
 
 EXPOSE 8080
 
-USER ${AIRFLOW_UID:-1000}:${AIRFLOW_GID:-0}
+USER airflow
+
+
 
 ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
 
