@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo UID: $UID
+echo $UID
 airflow db reset
 airflow db init
 airflow upgradedb

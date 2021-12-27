@@ -10,7 +10,7 @@ RUN ["chmod", "+x", "entrypoint.sh"]
 
 EXPOSE 8080
 
-USER airflow
+USER ${AIRFLOW_UID:-1000}:${AIRFLOW_GID:-0}
 
 ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
 
