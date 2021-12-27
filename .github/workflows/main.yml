@@ -16,8 +16,4 @@ jobs:
           heroku_app_name: app-airflow
           heroku_email: juanmixp@gmail.com
           usedocker: true
-          justlogin: true
-      - run: |
-          git config user.name jmaunon && git config user.email juanmixp@gmail.com # You may have to do this as well
-          git remote add heroku git@heroku.com:app-airflow.git
-          git push heroku main
+          justlogin: false
